@@ -1,33 +1,78 @@
 /* @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap"); */
 
 body {
-  display: grid;
-  place-items: center;
+  /* display: grid;
+  place-items: center; */
   /* margin-top: 40px; */
   /* padding: 20px; */
-  padding: 1rem;
-  background: #010101;
+  /* padding: 1rem; */
+  background: #fffbeb;
+}
+
+header {
+  text-align: center;
+  background-color: #3a8491;
+  border: 1px solid darkgray;
+  margin: 1rem 0;
 }
 
 main {
-  display: grid;
-  max-width: 1024px;
-  grid-gap: 1rem;
+  padding: 1rem;
 }
 
-@media (min-width: 700px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  main > section {
-    height: 350px;
-  }
+.content {
+  /* color: white; */
+  background-color: white;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.box-container {
+  /* padding: 1.5rem; */
+  background-color: #cacbca;
+  border-radius: .75rem;
+  padding: 1rem;
+  display: grid;
+  max-width: 1024px;
+  gap: 1rem;
+  margin: 0 auto;
+  /* background-color: red; */
+  /* padding: 1rem; */
+  /* justify-content: space-between; */
+  /* grid-template-columns: 1fr; */
+}
+
+
+/* ⬇ TABLET COLUMNS ⬇ */
+  @media (min-width: 700px) {
+    /* main { */
+    .box-container {
+      /* grid-template-columns: repeat(2, 1fr); */
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ⬇ height of images */
+    /* main > section { */
+    .box-container section {
+      height: 350px;
+      justify-content: space-around;
+    }
+  }
+
+/* ⬇ DESKTOP COLUMNS ⬇ */
 @media (min-width: 950px) {
-  main {
-    grid-template-columns: repeat(4, 1fr);
+  /* main { */
+  .box-container {
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
   }
 }
+
+
 
 h1 {
   /* font: 900 120px "Rubik", sans-serif; */
@@ -57,21 +102,25 @@ h1 {
 }
 
 /* main > section { */
-main section {
+/* main section { */
+.box-container section {
   background-size: cover;
-  background-color: #3a8491;
-  border-radius: 4px;
+  /* background-color: #3a8491; */
+  border-radius: .75rem;
 }
 
 /* main > section > div { */
-main section div {
+/* main section div { */
+
+ /* ⬇ Foreground Text Boxes ⬇ */
+.box-container section div {
   background-color: rgba(0, 0, 0, .75);
   margin: 1rem;
   padding: 1rem;
   color: white;
   text-align: center;
   /* font: 14px "Rubik", sans-serif; */
-  height: calc(100% - 4rem);
+  /* height: calc(100% - 4rem); */
   display: grid;
   grid-template-rows: min-content auto min-content;
   align-items: center;
@@ -112,7 +161,8 @@ a:focus {
 
 @media (hover: hover) and (min-width: 700px) { 
 
-  main > section > div {
+  /* main > section > div { */
+  .box-container section div {
     transform: translateY(calc(350px - 8rem));
 
     /* ⬇ Height of textbox before hover */
